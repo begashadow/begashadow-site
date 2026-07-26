@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Toutes les plateformes officielles de BEGA Shadow Resistance.">
+  <link rel="canonical" href="https://begashadow.com/streaming/">
+  <title>Plateformes — BEGA Shadow Resistance</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{min-height:100vh;background:radial-gradient(circle at 50% 0,rgba(216,161,63,.16),transparent 34%),#050505}
+    .stream-wrap{position:relative;z-index:1;width:min(760px,calc(100% - 28px));margin:0 auto;padding:86px 0 55px}
+    .back{display:inline-flex;margin-bottom:28px;color:#f4cf79;text-decoration:none;font-weight:900}
+    .stream-head{text-align:center;margin-bottom:30px}
+    .stream-head img{width:180px;height:180px;object-fit:cover;border-radius:24px;border:1px solid rgba(216,161,63,.35);box-shadow:0 18px 55px rgba(0,0,0,.55)}
+    .stream-head h1{font-size:clamp(2.2rem,7vw,4rem);margin:24px 0 10px;line-height:1}
+    .stream-head p{color:#b8b0a2}
+    .platforms{display:grid;gap:13px}
+    .platform{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:14px;padding:17px 19px;border:1px solid rgba(216,161,63,.24);border-radius:18px;background:#0e0e0e;text-decoration:none;transition:.2s}
+    .platform:hover{transform:translateY(-2px);border-color:#d8a13f;background:#15120e}
+    .platform-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:rgba(216,161,63,.13);color:#f4cf79;font-weight:900}
+    .platform strong,.platform small{display:block}.platform small{color:#b8b0a2;margin-top:4px}
+    .empty{padding:28px;border:1px solid rgba(216,161,63,.24);border-radius:18px;text-align:center;color:#b8b0a2}
+  </style>
+</head>
+<body>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <main class="stream-wrap">
+    <a class="back" href="../">← Retour au site</a>
+
+    <section class="stream-head">
+      <img src="../assets/bega-hero-mobile.png" alt="BEGA Shadow Resistance">
+      <h1>Écouter BEGA</h1>
+      <p>Choisis ta plateforme préférée.</p>
+    </section>
+
+    <section id="platforms" class="platforms"></section>
+  </main>
+
+  <script>
+    const iconMap = {
+      spotify: "S",
+      apple: "♪",
+      deezer: "D",
+      youtube: "▶",
+      amazon: "A",
+      tidal: "T",
+      soundcloud: "☁",
+      qobuz: "Q",
+      bandcamp: "B",
+      music: "♫",
+      link: "↗"
+    };
+
+    fetch("../data/site.json?v=" + Date.now())
+      .then((response) => response.json())
+      .then((data) => {
+        const container = document.getElementById("platforms");
+        const platforms = (data.platforms || []).filter((platform) => platform.visible && platform.url);
+
+        if (!platforms.length) {
+          container.innerHTML = '<div class="empty">Aucune plateforme disponible pour le moment.</div>';
+          return;
+        }
+
+        platforms.forEach((platform) => {
+          const link = document.createElement("a");
+          link.className = "platform";
+          link.href = platform.url;
+          link.target = "_blank";
+          link.rel = "noopener";
+
+          const key = String(platform.icon || "link").toLowerCase();
+          const icon = iconMap[key] || String(platform.icon || "↗").slice(0, 2);
+
+          link.innerHTML = `
+            <span class="platform-icon">${icon}</span>
+            <span><strong>${platform.name}</strong><small>Ouvrir la plateforme</small></span>
+            <span>↗</span>
+          `;
+          container.appendChild(link);
+        });
+      })
+      .catch(console.error);
+
+    const canvas = document.getElementById("embers");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = innerWidth * devicePixelRatio;
+      canvas.height = innerHeight * devicePixelRatio;
+      canvas.style.width = innerWidth + "px";
+      canvas.style.height = innerHeight + "px";
+      ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+      particles = Array.from({length:35},()=>({
+        x:Math.random()*innerWidth,
+        y:Math.random()*innerHeight,
+        r:Math.random()*1.7+.4,
+        v:Math.random()*.3+.08,
+        a:Math.random()*.45+.12
+      }));
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,innerWidth,innerHeight);
+      for (const p of particles) {
+        p.y -= p.v;
+        if (p.y < -5) {
+          p.y = innerHeight + 5;
+          p.x = Math.random() * innerWidth;
+        }
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(245,207,121,${p.a})`;
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    addEventListener("resize",resizeCanvas);
+    resizeCanvas();
+    animate();
+  </script>
+</body>
+</html>
