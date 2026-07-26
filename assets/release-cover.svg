@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#050505"/>
+    <stop offset=".52" stop-color="#2a1c0c"/>
+    <stop offset="1" stop-color="#080808"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="900" fill="url(#g)"/>
+<circle cx="450" cy="390" r="210" fill="#0a0a0a" stroke="#d8a13f" stroke-width="10"/>
+<path d="M350 535 L450 240 L550 535 Z" fill="none" stroke="#f4cf79" stroke-width="16"/>
+<text x="450" y="700" text-anchor="middle" fill="#f4cf79" font-size="82" font-family="Arial" font-weight="700">INTRO BEGA</text>
+</svg>
