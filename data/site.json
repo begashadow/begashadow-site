@@ -1,0 +1,44 @@
+{
+  "release": {
+    "title": "INTRO BEGA",
+    "subtitle": "La résistance commence ici",
+    "url": "https://distrokid.com/hyperfollow/begashadowresistance/intro-bega"
+  },
+  "links": [
+    {
+      "name": "YouTube",
+      "label": "BEGA OFFICIEL",
+      "icon": "youtube",
+      "url": "https://youtube.com/@BEGAShadowResistance",
+      "visible": true
+    },
+    {
+      "name": "Spotify",
+      "label": "BEGA OFFICIEL",
+      "icon": "spotify",
+      "url": "https://distrokid.com/hyperfollow/begashadowresistance/intro-bega",
+      "visible": true
+    },
+    {
+      "name": "Facebook",
+      "label": "BEGA OFFICIEL",
+      "icon": "facebook",
+      "url": "https://www.facebook.com/profile.php?id=61591943769113",
+      "visible": true
+    },
+    {
+      "name": "Instagram",
+      "label": "BEGA OFFICIEL",
+      "icon": "instagram",
+      "url": "https://www.instagram.com/bega_shadow_resistance/",
+      "visible": true
+    },
+    {
+      "name": "Contact",
+      "label": "contact@begashadow.com",
+      "icon": "mail",
+      "url": "mailto:contact@begashadow.com",
+      "visible": true
+    }
+  ]
+}

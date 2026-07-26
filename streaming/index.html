@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <title>Streaming — BEGA Shadow Resistance</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page{width:min(760px,calc(100% - 28px));margin:auto;padding:34px 0 60px}
+    .back{display:inline-block;margin-bottom:22px;color:#ffcf5b;text-decoration:none;font-weight:900}
+    .stream-hero{overflow:hidden;border:1px solid rgba(215,155,38,.34);border-radius:22px;background:#080808;text-align:center}
+    .stream-hero img{display:block;width:100%;max-height:520px;object-fit:cover;object-position:top}
+    .stream-hero h1{padding:0 18px}.stream-hero p{padding:0 18px 24px;color:#b9b2a8}
+    .stream-list{display:grid;gap:12px;margin-top:22px}
+    .stream-item{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:14px;padding:17px;border:1px solid rgba(215,155,38,.34);border-radius:16px;background:#0b0b0b;text-decoration:none}
+    .stream-item .icon{width:50px;height:50px;font-size:1.3rem}.stream-item small{display:block;color:#b9b2a8;margin-top:4px}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="../">← Retour</a>
+    <section class="stream-hero">
+      <img src="../assets/bega-universe.png" alt="BEGA Shadow Resistance">
+      <h1>ÉCOUTER BEGA</h1>
+      <p>Choisis ta plateforme préférée.</p>
+    </section>
+    <section id="stream-list" class="stream-list"></section>
+  </main>
+  <script>
+    const icons={youtube:"▶",spotify:"●",facebook:"f",instagram:"◎",mail:"✉",music:"♫",link:"↗"};
+    fetch("../data/site.json?v="+Date.now()).then(r=>r.json()).then(data=>{
+      const list=document.getElementById("stream-list");
+      (data.links||[]).filter(x=>x.visible&&x.url&&(x.icon==="spotify"||x.icon==="youtube"||x.icon==="music")).forEach(x=>{
+        const a=document.createElement("a");a.className="stream-item";a.href=x.url;a.target="_blank";a.rel="noopener";
+        a.innerHTML=`<span class="icon">${icons[x.icon]||"↗"}</span><span><strong>${x.name}</strong><small>${x.label||"Ouvrir la plateforme"}</small></span><span>↗</span>`;
+        list.appendChild(a);
+      });
+    });
+  </script>
+</body>
+</html>
