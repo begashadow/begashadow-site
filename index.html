@@ -1,106 +1,103 @@
-<!doctype html>
-<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- Référencement principal -->
   <title>BEGA Shadow Resistance — Site officiel</title>
-  <meta name="description" content="BEGA Shadow Resistance — musique, plateformes officielles, réseaux sociaux et contact.">
+  <meta name="description" content="Site officiel de BEGA Shadow Resistance, artiste indépendant mêlant rap, opéra et univers cinématographique. Écoutez INTRO BEGA et retrouvez toutes les plateformes officielles.">
+  <meta name="author" content="BEGA Shadow Resistance">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#050505">
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <!-- Adresse officielle du site -->
+  <link rel="canonical" href="https://begashadow.com/">
+
+  <!-- Partage Facebook, WhatsApp, Messenger, Discord -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="BEGA Shadow Resistance">
+  <meta property="og:title" content="BEGA Shadow Resistance — Site officiel">
+  <meta property="og:description" content="Le masque cache un visage, pas un message. Découvrez INTRO BEGA et les plateformes officielles de BEGA Shadow Resistance.">
+  <meta property="og:url" content="https://begashadow.com/">
+  <meta property="og:image" content="https://begashadow.com/assets/hero.jpg">
+  <meta property="og:image:alt" content="Univers officiel de BEGA Shadow Resistance">
+  <meta property="og:image:type" content="image/jpeg">
+
+  <!-- Aperçu sur les réseaux compatibles avec les cartes X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BEGA Shadow Resistance — Site officiel">
+  <meta name="twitter:description" content="Le masque cache un visage, pas un message. Écoutez INTRO BEGA.">
+  <meta name="twitter:image" content="https://begashadow.com/assets/hero.jpg">
+  <meta name="twitter:image:alt" content="Univers officiel de BEGA Shadow Resistance">
+
+  <!-- Fichiers d’indexation -->
+  <link rel="sitemap" type="application/xml" href="https://begashadow.com/sitemap.xml">
+
+  <!-- Connexion anticipée à Font Awesome -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer">
 
+  <!-- Feuille de style actuelle : inchangée -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Informations structurées pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "https://begashadow.com/#artist",
+    "name": "BEGA Shadow Resistance",
+    "alternateName": "BEGA",
+    "url": "https://begashadow.com/",
+    "image": "https://begashadow.com/assets/hero.jpg",
+    "description": "Artiste indépendant mêlant rap, opéra et univers cinématographique.",
+    "genre": [
+      "Rap",
+      "Hip-hop",
+      "Opéra",
+      "Musique cinématographique"
+    ],
+    "email": "contact@begashadow.com",
+    "sameAs": [
+      "https://www.youtube.com/@BEGAShadowResistance",
+      "https://open.spotify.com/intl-fr/artist/6KseJSbGq5e0naOqyKi18R",
+      "https://music.apple.com/us/artist/bega-shadow-resistance/6792806512?l=fr-FR",
+      "https://music.youtube.com/channel/UCzNe9qJJKQDOmtSIycV2iTQ",
+      "https://www.deezer.com/us/artist/404921472",
+      "https://music.amazon.com/artists/B0H9P71HWR/bega-shadow-resistance",
+      "https://tidal.com/artist/83071498",
+      "https://www.instagram.com/bega_shadow_resistance/",
+      "https://www.facebook.com/people/BEGA-Shadow-Resistance/61591943769113/",
+      "https://www.tiktok.com/@bega.shadow.rsist"
+    ]
+  }
+  </script>
+
+  <!-- Informations structurées pour INTRO BEGA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicRecording",
+    "@id": "https://begashadow.com/#intro-bega",
+    "name": "INTRO BEGA",
+    "url": "https://www.youtube.com/watch?v=KGeBsEnvCc8",
+    "image": "https://begashadow.com/assets/hero.jpg",
+    "byArtist": {
+      "@id": "https://begashadow.com/#artist"
+    },
+    "mainEntityOfPage": "https://begashadow.com/",
+    "subjectOf": {
+      "@type": "VideoObject",
+      "name": "INTRO BEGA — Clip officiel",
+      "description": "Clip officiel INTRO BEGA par BEGA Shadow Resistance.",
+      "thumbnailUrl": "https://begashadow.com/assets/hero.jpg",
+      "embedUrl": "https://www.youtube.com/embed/KGeBsEnvCc8",
+      "contentUrl": "https://www.youtube.com/watch?v=KGeBsEnvCc8"
+    }
+  }
+  </script>
 </head>
-<body>
-  <div id="intro" class="intro" aria-label="Introduction BEGA Shadow Resistance">
-    <div class="intro-inner">
-      <div class="intro-logo">BEGA</div>
-      <div class="intro-sub">SHADOW RESISTANCE</div>
-      <div class="intro-line"></div>
-      <p>Le masque cache un visage, pas un message.</p>
-      <div class="timer">Ouverture dans <strong id="count">3</strong></div>
-      <button id="enter" type="button">Entrer maintenant</button>
-    </div>
-  </div>
-
-  <main id="site" hidden>
-    <section class="hero">
-      <img src="assets/hero.jpg" alt="BEGA Shadow Resistance">
-      <div class="hero-fade"></div>
-    </section>
-
-    <section class="content">
-      <a class="primary"
-         href="https://www.youtube.com/watch?v=KGeBsEnvCc8"
-         target="_blank"
-         rel="noopener">
-        <span class="play"><i class="fa-solid fa-play"></i></span>
-        <span>
-          <b>Écouter ma musique</b>
-          <small>Voir INTRO BEGA sur YouTube</small>
-        </span>
-      </a>
-
-      <h2>ÉCOUTER SUR</h2>
-      <nav class="links listening" aria-label="Plateformes d'écoute">
-        <a class="spotify" href="https://open.spotify.com/intl-fr/artist/6KseJSbGq5e0naOqyKi18R" target="_blank" rel="noopener">
-          <i class="fa-brands fa-spotify"></i><b>Spotify</b><small>Artiste</small>
-        </a>
-        <a class="apple" href="https://music.apple.com/us/artist/bega-shadow-resistance/6792806512?l=fr-FR" target="_blank" rel="noopener">
-          <i class="fa-brands fa-apple"></i><b>Apple Music</b><small>Artiste</small>
-        </a>
-        <a class="youtube" href="https://music.youtube.com/channel/UCzNe9qJJKQDOmtSIycV2iTQ" target="_blank" rel="noopener">
-          <i class="fa-brands fa-youtube"></i><b>YouTube Music</b><small>Chaîne officielle</small>
-        </a>
-        <a class="deezer" href="https://www.deezer.com/us/artist/404921472" target="_blank" rel="noopener">
-          <i class="fa-solid fa-chart-simple"></i><b>Deezer</b><small>Artiste</small>
-        </a>
-        <a class="amazon" href="https://music.amazon.com/artists/B0H9P71HWR/bega-shadow-resistance" target="_blank" rel="noopener">
-          <i class="fa-brands fa-amazon"></i><b>Amazon Music</b><small>Artiste</small>
-        </a>
-        <a class="tidal" href="https://tidal.com/artist/83071498" target="_blank" rel="noopener">
-          <span class="tidal-mark">◆◆◆◆</span><b>Tidal</b><small>Artiste</small>
-        </a>
-      </nav>
-
-      <h2>SUIVRE BEGA</h2>
-      <nav class="links social" aria-label="Réseaux sociaux">
-        <a class="youtube" href="https://www.youtube.com/@BEGAShadowResistance" target="_blank" rel="noopener">
-          <i class="fa-brands fa-youtube"></i><b>YouTube</b><small>Chaîne officielle</small>
-        </a>
-        <a class="instagram" href="https://www.instagram.com/bega_shadow_resistance/" target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram"></i><b>Instagram</b><small>Officiel</small>
-        </a>
-        <a class="facebook" href="https://www.facebook.com/people/BEGA-Shadow-Resistance/61591943769113/" target="_blank" rel="noopener">
-          <i class="fa-brands fa-facebook-f"></i><b>Facebook</b><small>Officiel</small>
-        </a>
-        <a class="tiktok" href="https://www.tiktok.com/@bega.shadow.rsist" target="_blank" rel="noopener">
-          <i class="fa-brands fa-tiktok"></i><b>TikTok</b><small>Officiel</small>
-        </a>
-        <a class="whatsapp" href="https://wa.me/262692921409" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i><b>WhatsApp</b><small>M'écrire</small>
-        </a>
-      </nav>
-
-      <h2>ME CONTACTER</h2>
-      <a class="contact" href="mailto:contact@begashadow.com">
-        <i class="fa-regular fa-envelope"></i>
-        contact@begashadow.com
-      </a>
-
-      <blockquote>
-        <strong>DE L’OMBRE À LA LUMIÈRE,</strong><br>
-        NOTRE FORCE EST NOTRE HÉRITAGE.
-      </blockquote>
-
-      <footer>© 2026 BEGA Shadow Resistance — Tous droits réservés.</footer>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
