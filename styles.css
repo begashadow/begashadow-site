@@ -29,38 +29,25 @@ main{max-width:760px;margin:auto;background:#050505;min-height:100vh}
 .links small{color:#d49b24;text-transform:uppercase;font-size:.68rem;margin-top:4px}
 .spotify i{color:#1ed760}.apple i{color:#fff}.youtube i{color:#ff0000}.deezer i{color:#a65cff}.amazon i{color:#35a7ff}.instagram i{color:#e1306c}.facebook i{color:#1877f2}.whatsapp-contact i{color:#25d366}
 .tidal-mark{font-size:.9rem;letter-spacing:-.25em;color:#fff;margin-right:.25em}
+.social a:last-child:nth-child(odd){grid-column:1/-1}
 .contact-links{display:grid;grid-template-columns:1fr;gap:10px}
-.contact{display:flex;align-items:center;justify-content:flex-start;gap:14px;min-height:82px;color:#fff;text-decoration:none;border:1px solid #ad7610;border-radius:13px;padding:14px 16px;background:linear-gradient(145deg,#12100c,#050505);transition:.2s transform,.2s border-color}
-.contact i{width:46px;height:46px;flex:0 0 46px;border:1px solid #d39a22;border-radius:50%;display:grid;place-items:center;color:#e5a72a;font-size:1.35rem}
-.contact.whatsapp-contact i{border-color:#25d366}
-.contact span{display:flex;flex-direction:column;justify-content:center;min-width:0;line-height:1.2}
+.contact{display:flex;align-items:center;justify-content:flex-start;gap:12px;color:#fff;text-decoration:none;border:1px solid #ad7610;border-radius:13px;padding:17px;background:#090806;transition:.2s transform,.2s border-color}
+.contact i{color:#e5a72a;font-size:1.45rem;min-width:28px;text-align:center}
+.contact span{display:block;min-width:0}
 .contact b{display:block;font-size:.95rem}
-.contact small{display:block;color:#aaa;margin-top:5px;overflow-wrap:anywhere;line-height:1.25}
+.contact small{display:block;color:#aaa;margin-top:4px;overflow-wrap:anywhere}
 blockquote{text-align:center;margin:30px auto 16px;color:#ddd;font-style:italic;font-size:1.25rem;line-height:1.35}
 blockquote strong{color:#d89a1d}
 footer{text-align:center;color:#777;font-size:.78rem;padding-top:12px}
-.social{grid-template-columns:repeat(3,minmax(0,1fr))}
-.social a{min-height:96px;padding:10px 6px}
-.social i{font-size:1.65rem}
-.social b{font-size:.82rem}
-.social small{font-size:.58rem}
-@media(min-width:560px){
-  .contact-links{grid-template-columns:1fr 1fr}
-}
 @media(min-width:700px){
   .links{grid-template-columns:repeat(3,1fr)}
+  .social{grid-template-columns:repeat(3,1fr)}
+  .social a:last-child:nth-child(odd){grid-column:auto}
+  .contact-links{grid-template-columns:1fr 1fr}
   .content{padding-left:24px;padding-right:24px}
 }
 @media(max-width:390px){
   .content{margin-top:-24px}
   .links a{min-height:92px;padding:10px}
-  .social{gap:6px}
-  .social a{min-height:88px;padding:8px 4px}
-  .social i{font-size:1.45rem;margin-bottom:5px}
-  .social b{font-size:.74rem}
-  .social small{font-size:.51rem}
-  .contact{min-height:78px;padding:12px 14px}
-  .contact i{width:42px;height:42px;flex-basis:42px}
-  .contact b{font-size:.9rem}
-  .contact small{font-size:.78rem}
+  .contact{font-size:.92rem;padding:14px}
 }
