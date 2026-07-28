@@ -27,22 +27,27 @@ main{max-width:760px;margin:auto;background:#050505;min-height:100vh}
 .links i,.tidal-mark{font-size:1.9rem;margin-bottom:7px}
 .links b{font-size:.92rem}
 .links small{color:#d49b24;text-transform:uppercase;font-size:.68rem;margin-top:4px}
-.spotify i{color:#1ed760}.apple i{color:#fff}.youtube i{color:#ff0000}.deezer i{color:#a65cff}.amazon i{color:#35a7ff}.instagram i{color:#e1306c}.facebook i{color:#1877f2}.tiktok i{color:#fff;text-shadow:-2px 0 #25f4ee,2px 0 #fe2c55}.whatsapp i{color:#25d366}
+.spotify i{color:#1ed760}.apple i{color:#fff}.youtube i{color:#ff0000}.deezer i{color:#a65cff}.amazon i{color:#35a7ff}.instagram i{color:#e1306c}.facebook i{color:#1877f2}.whatsapp-contact i{color:#25d366}
 .tidal-mark{font-size:.9rem;letter-spacing:-.25em;color:#fff;margin-right:.25em}
 .social a:last-child:nth-child(odd){grid-column:1/-1}
-.contact{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;color:#fff;text-decoration:none;border:1px solid #ad7610;border-radius:13px;padding:17px;background:#090806;transition:.2s transform,.2s border-color}
-.contact i{color:#e5a72a;font-size:1.15rem}
+.contact-links{display:grid;grid-template-columns:1fr;gap:10px}
+.contact{display:flex;align-items:center;justify-content:flex-start;gap:12px;color:#fff;text-decoration:none;border:1px solid #ad7610;border-radius:13px;padding:17px;background:#090806;transition:.2s transform,.2s border-color}
+.contact i{color:#e5a72a;font-size:1.45rem;min-width:28px;text-align:center}
+.contact span{display:block;min-width:0}
+.contact b{display:block;font-size:.95rem}
+.contact small{display:block;color:#aaa;margin-top:4px;overflow-wrap:anywhere}
 blockquote{text-align:center;margin:30px auto 16px;color:#ddd;font-style:italic;font-size:1.25rem;line-height:1.35}
 blockquote strong{color:#d89a1d}
 footer{text-align:center;color:#777;font-size:.78rem;padding-top:12px}
 @media(min-width:700px){
   .links{grid-template-columns:repeat(3,1fr)}
-  .social{grid-template-columns:repeat(5,1fr)}
+  .social{grid-template-columns:repeat(3,1fr)}
   .social a:last-child:nth-child(odd){grid-column:auto}
+  .contact-links{grid-template-columns:1fr 1fr}
   .content{padding-left:24px;padding-right:24px}
 }
 @media(max-width:390px){
   .content{margin-top:-24px}
   .links a{min-height:92px;padding:10px}
-  .contact{font-size:.92rem}
+  .contact{font-size:.92rem;padding:14px}
 }
